@@ -1,0 +1,148 @@
+@import './../../../../variables.scss';
+
+.FAQ {
+    position: relative !important;
+    padding-top: 140px;
+    padding-bottom: 140px;
+    overflow: hidden;
+    margin-top: -140px;
+
+    .w_square {
+        position: absolute;
+        top: -180px;
+        right: -100px;
+        z-index: -1;
+    }
+
+    .coins {
+        position: absolute;
+        bottom: -15%;
+        left: -50px;
+        z-index: -1;
+    }
+
+    &:before {
+        @include pseudo_abs();
+        background: linear-gradient(360deg, #fff, transparent);
+        height: 20%;
+        top: auto;
+        bottom: 0;
+    }
+    .faq_icon {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        top: -145px;
+        width: 240px;
+    }
+    .faq_item {
+        .card {
+            box-shadow: 45.8202px 43px 83.281px rgba(27, 49, 66, 0.1) !important;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 30px;
+            color: #242732;
+            text-align: left;
+            @include flex-row();
+            cursor: pointer;
+            justify-content: space-between;
+
+            &:hover ~ .content_wrap {
+                padding-top: 40px;
+            }
+        }
+
+        .content_wrap {
+            background: #ffffff;
+            border: 1.52734px solid #ffffff;
+            box-sizing: border-box;
+            box-shadow: 45.8202px 106.914px 113.281px rgba(27, 49, 66, 0.05);
+            padding: 30px;
+            border-radius: 45px;
+            float: left;
+            width: 85%;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            margin-top: -40px;
+            margin-left: 7.5%;
+            transition: margin 0.1s, width 0.1s, padding 0.5s;
+
+            &.active {
+                width: 100%;
+                padding-top: 50px;
+                margin-left: 0;
+
+                p {
+                    animation: rollDown 0.4s 1;
+                }
+            }
+        }
+    }
+}
+
+@keyframes rollDown {
+    from {
+        padding-top: 0;
+        padding-bottom: 0;
+        line-height: 0;
+        max-height: 0px;
+        opacity: 0;
+    }
+    to {
+        max-height: 100%;
+    }
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+    .FAQ {
+        margin-top: 40px;
+
+        .w_square {
+            right: -10px;
+        }
+
+        .coins {
+            left: 0px;
+        }
+
+        .faq_icon {
+            top: -150px;
+        }
+
+        .faq_item {
+            margin-bottom: 15px;
+
+            .content_wrap {
+                margin-top: -80px;
+
+                &.active {
+                    p {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $breakpoint-xs) {
+    .FAQ {
+        .faq_item {
+            margin-bottom: 5px;
+            .card {
+                padding: 20px;
+                font-size: 20px;
+            }
+
+            .content_wrap {
+                margin-top: -100px;
+
+                &.active {
+                    p {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+@import './../../../../variables.scss';
+
+.cookie {
+    // width: calc(100% - 20px);
+    max-width: 1160px;
+    position: fixed;
+    bottom: 25px;
+    left: 0;
+    z-index: 99999999;
+    @include flex-row();
+    text-align: left;
+    color: #5d5f7c;
+    margin-left: 10px;
+    box-sizing: border-box;
+    margin-left: 50%;
+    font-size: 15px;
+    transform: translate(-50%) !important;
+    background: #ffffff;
+    border: 0.54526px solid rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    box-shadow: 0px 21.8104px 43.6208px rgba(0, 0, 0, 0.05);
+    border-radius: 109.052px;
+    padding: 10px 20px;
+
+    strong {
+        margin-left: 5px;
+    }
+
+    span {
+        margin-left: 10px;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+    .cookie {
+        max-width: 450px;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: $breakpoint-xs) {
+    .cookie {
+        max-width: 95%;
+        width: 100%;
+        padding: 10px 10px;
+        flex-direction: column;
+
+        span {
+            margin-left: 5px;
+            position: absolute;
+            top: calc(50% - 13px);
+            right: 20px;
+        }
+    }
+}

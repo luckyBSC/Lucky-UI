@@ -1,0 +1,252 @@
+@import './../../../../variables.scss';
+
+.luckyDraw {
+    width: 100%;
+    position: relative;
+    padding-bottom: 40px;
+
+    .oval {
+        position: absolute;
+        right: 0;
+        // transform: rotate(180deg);
+        top: 15%;
+    }
+    .logo {
+        margin-left: 50%;
+        transform: translate(-50%);
+
+        & ~ h1 {
+            margin-top: 5px;
+        }
+    }
+    .dots {
+        position: absolute;
+        left: 0;
+        z-index: -10;
+        top: 5%;
+    }
+
+    .balance_card {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        .value {
+            margin: 0;
+            border: 1px solid #82676727;
+            // padding: 5px 20px;
+        }
+    }
+
+    .listings_wrap {
+        z-index: 9990;
+        position: relative;
+        margin-top: 60px;
+        max-width: 80%;
+        font-size: 20px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        box-shadow: 39.0105px 91.0246px 156.042px rgba(103, 63, 63, 0.13);
+
+        .scroll_wrap {
+            max-height: 300px;
+            overflow: auto;
+            width: 100%;
+            padding-right: 40px;
+
+            /* width */
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            /* Track */
+            &::-webkit-scrollbar-track {
+                background: #c4c4c450;
+                border-radius: 90px;
+            }
+
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: linear-gradient(
+                        179.03deg,
+                        #ffb547 0.83%,
+                        #ff6767 162.96%
+                    ),
+                    linear-gradient(
+                        0deg,
+                        rgba(255, 41, 105, 0.25) 35.24%,
+                        rgba(247, 122, 28, 0.25) 74.02%
+                    ),
+                    linear-gradient(0deg, #ff7981, #ff7981), #c4c4c4;
+                border-radius: 90px;
+            }
+
+            /* Handle on hover */
+            &::-webkit-scrollbar-thumb:hover {
+                background: #555;
+            }
+
+            .list_item {
+                border-bottom: 1px dashed #00000080;
+                width: 100%;
+                padding: 15px 0;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+
+    .blocks_wrap {
+        margin-top: 160px;
+        margin-bottom: 100px;
+        z-index: 9990;
+        position: relative;
+
+        .special_card {
+            background-color: #fff;
+            padding: 35px 20px;
+            text-align: center;
+            border-radius: 20px;
+            font-family: Poppins;
+            font-weight: 600;
+            font-size: 30px;
+            position: relative;
+            width: 25%;
+            max-width: 300px;
+            box-shadow: 0px 51.0245px 173.182px rgba(27, 49, 66, 0.1);
+
+            &:last-child {
+                margin-bottom: 0 !important;
+            }
+            &:before {
+                @include pseudo_abs();
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: #ffe0dc;
+                left: -5px;
+                top: -5px;
+            }
+
+            &:after {
+                @include pseudo_abs();
+                width: 65px;
+                height: 65px;
+                border-radius: 50%;
+                background: linear-gradient(
+                        0deg,
+                        rgba(255, 41, 105, 0.25) 35.24%,
+                        rgba(247, 122, 28, 0.25) 74.02%
+                    ),
+                    linear-gradient(0deg, #ff7981, #ff7981),
+                    linear-gradient(54.79deg, #7749f8 7.97%, #00ffe0 110.27%),
+                    linear-gradient(349.78deg, #1c6ad5 -35.28%, #13d2de 83.54%),
+                    #c4c4c4;
+                left: auto;
+                top: 20px;
+                right: -10px;
+            }
+
+            .bg_square {
+                position: absolute;
+                width: calc(100% + 5px);
+                height: calc(100% + 5px);
+                left: -5px;
+                top: -5px;
+                border: 2px solid #ff6767;
+                border-radius: 20px;
+                // background-image: url('./../../../../assets/images/svg/Square BG.svg');
+                // background-size: contain;
+                // background-repeat: no-repeat;
+                z-index: -1;
+                transform: rotate(-16deg);
+            }
+
+            .title {
+                color: #29292d;
+            }
+
+            img {
+                width: 90px;
+                height: 90px;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .button_wrap {
+        button {
+            margin: 0 25px;
+            @include flex-row();
+
+            svg {
+                width: 25px;
+                height: 25px;
+                margin: 0;
+                margin-right: 10px;
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+    .luckyDraw {
+        .blocks_wrap {
+            flex-wrap: wrap;
+            justify-content: space-around !important;
+            margin-top: 60px;
+
+            .special_card {
+                min-width: calc(50% - 80px);
+                margin-bottom: 110px;
+            }
+        }
+
+        .listings_wrap {
+            max-width: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width: $breakpoint-xs) {
+    .luckyDraw {
+        .blocks_wrap {
+            .special_card {
+                min-width: calc(100% - 80px);
+                margin-bottom: 110px;
+                font-size: 20px;
+            }
+        }
+
+        .balance_card {
+            padding: 15px;
+            .value {
+                word-break: break-all;
+                flex-direction: column;
+                font-size: 20px;
+            }
+        }
+
+        .listings_wrap {
+            padding: 15px;
+            .scroll_wrap {
+                padding-right: 10px;
+                .list_item {
+                    text-align: center;
+                    word-break: break-all;
+                    flex-direction: column;
+                }
+            }
+        }
+
+        .button_wrap {
+            // flex-direction: column;
+            justify-content: space-between;
+
+            button {
+                margin: 0;
+            }
+        }
+    }
+}

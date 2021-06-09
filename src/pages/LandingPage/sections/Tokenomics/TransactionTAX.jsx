@@ -57,7 +57,7 @@ const TransactionTAX = () => {
                     data-aos-duration='700'>
                     <img src={GreenBox} alt='Box' />
                     <div className='title pink_text'>4%</div>
-                    <p>Contributed to the Lucky Draw</p>
+                    <p>Contributed to the Lotteries</p>
                     <StraightLine />
                 </div>
                 <div

@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.af68f662.chunk.css",
-    "main.js": "/static/js/main.af8efdf5.chunk.js",
-    "main.js.map": "/static/js/main.af8efdf5.chunk.js.map",
+    "main.js": "/static/js/main.88f008d2.chunk.js",
+    "main.js.map": "/static/js/main.88f008d2.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.a38e7f00.js",
     "runtime-main.js.map": "/static/js/runtime-main.a38e7f00.js.map",
     "static/css/2.7fc9bc2b.chunk.css": "/static/css/2.7fc9bc2b.chunk.css",
@@ -29,7 +29,7 @@
     "static/media/Holders.a52728a2.svg": "/static/media/Holders.a52728a2.svg",
     "static/media/Jackpot Draw.03ac48e5.svg": "/static/media/Jackpot Draw.03ac48e5.svg",
     "static/media/Lucky Draw.4f0270d6.svg": "/static/media/Lucky Draw.4f0270d6.svg",
-    "static/media/MainLogo.3acb1c06.png": "/static/media/MainLogo.3acb1c06.png",
+    "static/media/MainLogo.7b90bf11.png": "/static/media/MainLogo.7b90bf11.png",
     "static/media/MainLogoBG.4648d998.svg": "/static/media/MainLogoBG.4648d998.svg",
     "static/media/MarkeCap.78d002b7.svg": "/static/media/MarkeCap.78d002b7.svg",
     "static/media/OrangeSquare.1051e6b5.svg": "/static/media/OrangeSquare.1051e6b5.svg",
@@ -57,6 +57,6 @@
     "static/css/2.7fc9bc2b.chunk.css",
     "static/js/2.916eedd5.chunk.js",
     "static/css/main.af68f662.chunk.css",
-    "static/js/main.af8efdf5.chunk.js"
+    "static/js/main.88f008d2.chunk.js"
   ]
 }

@@ -69,8 +69,7 @@ const Tokenomics = () => {
                         <img src={Token1} alt='token logo' />
                         <div className='title'>30% BURNED</div>
                         <p>
-                            With 30% of supply burned jackpots can grow larger
-                            due to dead tickets potentially winning.
+                            Burning part of the supply makes the token deflation as yield goes to the burn address.
                         </p>
                     </div>
                     <div
@@ -94,9 +93,9 @@ const Tokenomics = () => {
                         <img src={Token3} alt='token logo' />
                         <div className='title'>30% LIQUIDITY</div>
                         <p>
-                            87,500 BUSD was paired with 266,666,666,666,666
+                            87,500 BUSD is paired with 266,666,666,666,666
                             LUCKY for an initial market cap of approximately
-                            $204,000 (MAKE THIS A PIE CHART)
+                            $204,000
                         </p>
                     </div>
                 </div>

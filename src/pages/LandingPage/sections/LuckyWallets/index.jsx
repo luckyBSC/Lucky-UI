@@ -9,24 +9,24 @@ import { ReactComponent as Dots } from './../../../../assets/images/svg/Dots.svg
 import Oval from './../../../../assets/images/svg/Oval.svg';
 
 const listingArray = [
-    { title: 'Werr532srtyhfERT2456tfsww', value: '8,888 BUSD' },
-    { title: 'Werr532srtyhfERT2456tfsww', value: '18,888 BUSD' },
-    { title: 'Werr532srtyhfERT2456tfsww', value: '8,848 BUSD' },
     { title: 'Werr532srtyhfERT2456tfsww', value: '888 BUSD' },
-    { title: 'Werr532srtyhfERT2456tfsww', value: '12,888 BUSD' },
-    { title: 'Werr532srtyhfERT2456tfsww', value: '8,888 BUSD' },
-    { title: 'Werr532srtyhfERT2456tfsww', value: '8,888 BUSD' },
-    { title: 'Werr532srtyhfERT2456tfsww', value: '8,888 BUSD' },
-    { title: 'Werr532srtyhfERT2456tfsww', value: '8,888 BUSD' },
-    { title: 'Werr532srtyhfERT2456tfsww', value: '8,888 BUSD' },
-    { title: 'Werr532srtyhfERT2456tfsww', value: '8,888 BUSD' },
-    { title: 'Werr532srtyhfERT2456tfsww', value: '8,888 BUSD' },
-    { title: 'Werr532srtyhfERT2456tfsww', value: '8,888 BUSD' },
-    { title: 'Werr532srtyhfERT2456tfsww', value: '8,888 BUSD' },
-    { title: 'Werr532srtyhfERT2456tfsww', value: '8,888 BUSD' },
-    { title: 'Werr532srtyhfERT2456tfsww', value: '8,888 BUSD' },
-    { title: 'Werr532srtyhfERT2456tfsww', value: '8,888 BUSD' },
-    { title: 'Werr532srtyhfERT2456tfsww', value: '8,888 BUSD' },
+    { title: 'Werr532srtyhfERT2456tfsww', value: '88,888 BUSD' },
+    { title: 'Werr532srtyhfERT2456tfsww', value: '888 BUSD' },
+    { title: 'Werr532srtyhfERT2456tfsww', value: '888 BUSD' },
+    { title: 'Werr532srtyhfERT2456tfsww', value: '888 BUSD' },
+    { title: 'Werr532srtyhfERT2456tfsww', value: '888 BUSD' },
+    { title: 'Werr532srtyhfERT2456tfsww', value: '888 BUSD' },
+    { title: 'Werr532srtyhfERT2456tfsww', value: '888 BUSD' },
+    { title: 'Werr532srtyhfERT2456tfsww', value: '888 BUSD' },
+    { title: 'Werr532srtyhfERT2456tfsww', value: '888 BUSD' },
+    { title: 'Werr532srtyhfERT2456tfsww', value: '888 BUSD' },
+    { title: 'Werr532srtyhfERT2456tfsww', value: '888 BUSD' },
+    { title: 'Werr532srtyhfERT2456tfsww', value: '888 BUSD' },
+    { title: 'Werr532srtyhfERT2456tfsww', value: '888 BUSD' },
+    { title: 'Werr532srtyhfERT2456tfsww', value: '888 BUSD' },
+    { title: 'Werr532srtyhfERT2456tfsww', value: '888 BUSD' },
+    { title: 'Werr532srtyhfERT2456tfsww', value: '888 BUSD' },
+    { title: 'Werr532srtyhfERT2456tfsww', value: '88,888 BUSD' },
 ];
 
 const Wallets = () => {
@@ -53,7 +53,7 @@ const Wallets = () => {
                     data-aos-duration='700'>
                     <div className='value flex_wrap space_between'>
                         <div>Werr532srtyhfERT2456tfsww</div>
-                        <div className='pink_text'>8,888 BUSD</div>
+                        <div className='pink_text'>888 BUSD</div>
                     </div>
                 </div>
 
@@ -110,7 +110,7 @@ const Wallets = () => {
                         data-aos-offset='0'
                         data-aos-duration='700'>
                         <Statictics />
-                        STATISTICS
+                        HOW TO BUY
                     </button>
                 </div>
             </div>

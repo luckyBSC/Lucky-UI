@@ -21,16 +21,14 @@ const MainPage = () => {
                             data-aos='fade-up'
                             data-aos-offset='0'
                             data-aos-duration='500'>
-                            <div>Lucky Draw</div>
-                            400+ lotteries
+                            <div>Lucky</div>
+                            Decentralized Lotteries
                         </h1>
                         <p
                             data-aos='fade-up'
                             data-aos-offset='0'
                             data-aos-duration='700'>
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s
+                            The premier decentralized lottery token on the Binance Smart Chain network paying out BUSD directly. Just buy, hold, and win.
                         </p>
                         <div className='buttons_wrap '>
                             <button
@@ -43,7 +41,7 @@ const MainPage = () => {
                                 data-aos='fade-up'
                                 data-aos-offset='0'
                                 data-aos-duration='900'>
-                                CONNECT WALLET
+                                HOW IT WORKS
                             </button>
                         </div>
                     </div>
@@ -69,7 +67,7 @@ const MainPage = () => {
                         data-aos-duration='800'>
                         <LuckyDraw />
                         <div className='main_head'>LUCKY DRAW</div>
-                        <div className='value'>BUSD 2,435 / 8,888</div>
+                        <div className='value'>BUSD 435 / 888</div>
                     </div>
                     <div
                         className='split_box card'
@@ -78,7 +76,7 @@ const MainPage = () => {
                         data-aos-duration='1000'>
                         <JackpotDraw />
                         <div className='main_head'>JACKPOT DRAW</div>
-                        <div className='value'>BUSD 10,920 / 8,888</div>
+                        <div className='value'>BUSD 74,920 / 88,888</div>
                     </div>
                 </div>
                 <div className='flex_wrap'>
@@ -102,8 +100,8 @@ const MainPage = () => {
                         data-aos='fade-up'
                         data-aos-offset='0'
                         data-aos-duration='900'>
-                        <div className='main_head'>TOTAL DISTRIBUTED</div>
-                        <div className='value'>1,820,000 BUSD</div>
+                        <div className='main_head'>TOTAL WINNINGS</div>
+                        <div className='value'>1,000,000 BUSD</div>
                     </div>
                     <img
                         src={Graphics}

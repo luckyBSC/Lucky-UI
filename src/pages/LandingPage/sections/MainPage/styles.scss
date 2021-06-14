@@ -141,6 +141,8 @@
         min-height: 100vh;
 
         .main_head {
+            width: 10px;
+            text-align: left;
             position: relative;
             @include flex-column();
             align-items: flex-start;

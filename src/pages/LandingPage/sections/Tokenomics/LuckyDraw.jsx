@@ -3,12 +3,12 @@ import Oval from './../../../../assets/images/svg/Oval.svg';
 import RedSquare from './../../../../assets/images/svg/RedSquare.svg';
 
 const luckyDrawTexts = [
-    '4% of transactions are taxed and added to liquidity',
-    'Lucky draw liquidity value reaches 1,500 BUSD',
-    'LP is unwrapped',
-    'LUCKY from LP is burnt',
+    'Half swapped to BUSD and added to lucky draw pool',
+    'Half is burned to reduce supply',
+    'Lucky draw pool value reaches 1,500 BUSD',
     '888 BUSD prize distributed',
-    'Remaining BUSD added to the jackpot draw',
+    'Remaining BUSD added to the jackpot draw pool',
+    'Jackpot draw reaches 88,888 BUSD and prize distributed',
 ];
 const LuckyDraw = () => {
     return (

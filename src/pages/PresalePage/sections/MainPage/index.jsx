@@ -130,10 +130,11 @@ const MainPage = () => {
                             data-aos='fade-up'
                             data-aos-offset='0'
                             data-aos-duration='700'>
-                            Whitelisted wallets may deposit 250 BUSD to receive LUCKY presale tokens shortly after launch. 
-
-                            To use, first click approve to allow the presale contract to transfer up to 
-                            250 BUSD, then click deposit to transfer your BUSD to the contract.
+                            To use: <br></br>
+                            <br></br>
+                            1. Click approve to allow the presale contract to transfer up to 250 BUSD <br></br>
+                            <br></br>
+                            2. Click deposit to transfer your BUSD to the contract.
                         </p>
                         <button className='value button-click'>{totalWinnings} Approve BUSD</button>
                     </div>

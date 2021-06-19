@@ -33,8 +33,8 @@ function App() {
 
     return (
         <>
-            <Header />
-            {window.location.href.split('/')[3] == 'presale' ?
+            <Header page={page}/>
+            {page == 'presale' ?
                 <PresalePage />
                 :
                 <LandingPage />

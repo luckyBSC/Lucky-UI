@@ -5,7 +5,11 @@ import useCheckMobileScreen from './../../shared/useCheckMobileScreen';
 import './styles.scss';
 import {connectWallet} from '../../web3/web3';
 
-const Header = () => {
+const Header = (props = {}) => {
+    const {
+      page
+    } = props;
+
     const isMobile = useCheckMobileScreen();
     const [showPop, setShowPop] = useState(false);
     const [sticked, setSticked] = useState(false);
@@ -25,8 +29,6 @@ const Header = () => {
         }
         async function load() {
             setUserWallet(await connectWallet());
-            // console.log(await connectWallet());
-            console.log(userWallet);
         }
         load()
         window.addEventListener('scroll', stickHeaderHandler);
@@ -118,6 +120,7 @@ const Header = () => {
                 <div className='container'>
                     <div
                         className={
+                            `${page === 'presale' ? 'invisible ' : ''}` +
                             'btn ' +
                             (hamburgerClicked ? 'active' : 'not-active')
                         }
@@ -134,6 +137,7 @@ const Header = () => {
                             href='#luckyDraw'
                             onClick={anchorLinkClickHandler}
                             className={
+                              `${page === 'presale' ? 'invisible ' : ''}` +
                                 'link' +
                                 (clickedTopic === 'luckyDraw' ? ' active' : '')
                             }>
@@ -145,6 +149,7 @@ const Header = () => {
                                 setHamburgerClicked(false);
                             }}
                             className={
+                              `${page === 'presale' ? 'invisible ' : ''}` +
                                 'link' +
                                 (clickedTopic === 'statistics' ? ' active' : '')
                             }>
@@ -154,6 +159,7 @@ const Header = () => {
                             href='#tokenomics'
                             onClick={anchorLinkClickHandler}
                             className={
+                              `${page === 'presale' ? 'invisible ' : ''}` +
                                 'link' +
                                 (clickedTopic === 'tokenomics' ? ' active' : '')
                             }>
@@ -163,6 +169,7 @@ const Header = () => {
                             href='#FAQ'
                             onClick={anchorLinkClickHandler}
                             className={
+                              `${page === 'presale' ? 'invisible ' : ''}` +
                                 'link' +
                                 (clickedTopic === 'FAQ' ? ' active' : '')
                             }>

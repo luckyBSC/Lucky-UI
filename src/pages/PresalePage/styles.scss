@@ -1,0 +1,74 @@
+@import './../../variables.scss';
+
+.bg_top {
+    position: absolute;
+    top: -5%;
+    right: 0%;
+    height: 140vh;
+    z-index: -1;
+}
+
+.second_gradient {
+    position: absolute;
+    top: 20%;
+    left: 0%;
+    z-index: -2;
+    width: 100%;
+}
+
+.shade_gradient {
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    top: 0;
+    object-fit: cover;
+    object-position: top;
+    height: 100%;
+}
+
+.gradient2,
+.gradient3 {
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    object-fit: contain;
+    height: 100%;
+}
+
+.gradient2 {
+    top: 230%;
+    right: 0;
+    object-position: right;
+}
+
+.gradient3 {
+    top: 0px;
+    left: 0;
+    object-position: left;
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    // transition: filter 0.4s;
+    &.blur {
+        // filter: blur(2px);
+    }
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+    .bg_top {
+        top: 0%;
+        height: 150vh;
+    }
+    .second_gradient {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: $breakpoint-xs) {
+    .bg_top {
+        top: -10%;
+        height: 150vh;
+    }
+}

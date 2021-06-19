@@ -3,6 +3,7 @@ import PopUp from './../PopUp';
 import StatisticsPop from './../StatisticsPop';
 import useCheckMobileScreen from './../../shared/useCheckMobileScreen';
 import './styles.scss';
+import {connectWallet} from '../../web3/web3';
 
 const Header = () => {
     const isMobile = useCheckMobileScreen();
@@ -10,6 +11,7 @@ const Header = () => {
     const [sticked, setSticked] = useState(false);
     const [clickedTopic, setClickedTopic] = useState('');
     const [hamburgerClicked, setHamburgerClicked] = useState(false);
+    const [userWallet, setUserWallet] = useState(null);
 
     useEffect(() => {
         function stickHeaderHandler(e) {
@@ -19,7 +21,14 @@ const Header = () => {
             } else if (e.currentTarget.scrollY < 5) {
                 setSticked(false);
             }
+            
         }
+        async function load() {
+            setUserWallet(await connectWallet());
+            // console.log(await connectWallet());
+            console.log(userWallet);
+        }
+        load()
         window.addEventListener('scroll', stickHeaderHandler);
 
         return () => {
@@ -160,7 +169,11 @@ const Header = () => {
                             FAQ
                         </a>
                     </div>
-                    <button>Connect Wallet</button>
+                    {userWallet && userWallet.length > 0 ?
+                        <button onClick={() => connectWallet()}>...{userWallet[0].substr(userWallet[0].length - 8)}</button>
+                        :
+                        <button onClick={() => connectWallet()}>Connect Wallet</button>
+                    }
                 </div>
             </header>
         </>

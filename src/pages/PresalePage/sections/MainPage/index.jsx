@@ -39,7 +39,7 @@ const MainPage = () => {
             <div className='container'>
                 <div className='split_box_wrap'>
                     <div className='split_box contents_wrap'>
-                        <h1
+                        {/* <h1
                             className='all_uppercase main_head'
                             data-aos='fade-up'
                             data-aos-offset='0'
@@ -52,8 +52,8 @@ const MainPage = () => {
                             data-aos-offset='0'
                             data-aos-duration='700'>
                             The premier decentralized lottery token on the Binance Smart Chain network paying out BUSD directly. Just buy, hold, and win.
-                        </p>
-                        <div className='buttons_wrap '>
+                        </p> */}
+                        {/* <div className='buttons_wrap '>
                             <button
                                 
                                 data-aos='fade-up'
@@ -67,9 +67,9 @@ const MainPage = () => {
                                 data-aos-duration='900'>
                                 HOW IT WORKS
                             </button>
-                        </div>
+                        </div> */}
                     </div>
-                    <div
+                    {/* <div
                         className='split_box image_box'
                         data-aos='fade-up'
                         data-aos-offset='0'
@@ -80,9 +80,9 @@ const MainPage = () => {
                             alt='MainLogo'
                             className='main_logo'
                         />
-                    </div>
+                    </div> */}
                 </div>
-                <div className='split_box_wrap'>
+                {/* <div className='split_box_wrap'>
                     <Dots className='dots' />
                     <div
                         className='split_box card'
@@ -102,7 +102,7 @@ const MainPage = () => {
                         <div className='main_head'>JACKPOT DRAW</div>
                         <div className='value'>{jackpotAmount} / 88,888 BUSD</div>
                     </div>
-                </div>
+                </div> */}
                 <div className='flex_wrap'>
                     <Coins
                         className='coins'
@@ -122,10 +122,20 @@ const MainPage = () => {
                     <div
                         className='total_distributed card'
                         data-aos='fade-up'
-                        data-aos-offset='0'
+                        data-aos-offset='-120'
                         data-aos-duration='900'>
-                        <div className='main_head'>TOTAL WINNINGS</div>
-                        <div className='value'>{totalWinnings} BUSD</div>
+                        <div className='main_head'>Lucky Presale: Not Whitelisted</div>
+                        <p
+                            className="presale-text"
+                            data-aos='fade-up'
+                            data-aos-offset='0'
+                            data-aos-duration='700'>
+                            Whitelisted wallets may deposit 250 BUSD to receive LUCKY presale tokens shortly after launch. 
+
+                            To use, first click approve to allow the presale contract to transfer up to 
+                            250 BUSD, then click deposit to transfer your BUSD to the contract.
+                        </p>
+                        <button className='value button-click'>{totalWinnings} Approve BUSD</button>
                     </div>
                     <img
                         src={Graphics}

@@ -115,10 +115,13 @@ async function getMoveablePresaleAmount() {
 const BUSD = '0xe9e7cea3dedca5984780bafc599bd69add087d56';
 const presaleContract = '0x5346F36C8802A241f3a31FD6c24c6Fb934dD5F27';
 async function getBUSDApprovalBalance() {
+    console.log(myWeb3);
     if (myWeb3) {
         let userAddress = await myWeb3.eth.getAccounts();
+        console.log(userAddress);
         let contract = new myWeb3.eth.Contract(Lucky.abi, BUSD);
         let balance = await contract.methods.allowance(userAddress[0], presaleContract).call();
+        console.log(balance);
         return balance;
     }
 }
@@ -150,7 +153,6 @@ async function depositBUSD() {
         let balance = await contract.methods.addPresaleBUSD().send({
             from: userAddress[0]
         });
-        console.log(balance);
         return;
     }
 

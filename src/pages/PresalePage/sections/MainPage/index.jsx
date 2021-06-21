@@ -11,7 +11,7 @@ import Graphics from './../../../../assets/images/svg/Graphics.svg';
 import MainLogo from './../../../../assets/images/MainLogo.png';
 
 
-import {approveBUSD, getBUSDApprovalBalance, depositBUSD, isWhitelisted} from '../../../../web3/web3';
+import {connectWallet, approveBUSD, getBUSDApprovalBalance, depositBUSD, isWhitelisted} from '../../../../web3/web3';
 
 
 const MainPage = () => {
@@ -25,22 +25,20 @@ const MainPage = () => {
         window.location.assign('https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xC3b759bc189BC69fFAd7c5Ab5A522666bC051264');
     }
 
-    async function checkAllowance() {
-        return await new Promise(resolve => {
-            const interval = setInterval(() => {
-              setBUSDAllowance(getBUSDApprovalBalance());
-            }, 10000);
-          });
+
+    async function approve() {
+        let res = await approveBUSD();
+        setBUSDAllowance(await getBUSDApprovalBalance());
     }
 
 
     useEffect(() => {
         
         async function load() {
+            await connectWallet();
             setBUSDAllowance(await getBUSDApprovalBalance());
             setWalletWhitelisted(await isWhitelisted());
-            await checkAllowance();
-            
+           
         }
         load()
     }, []);
@@ -148,18 +146,27 @@ const MainPage = () => {
                             data-aos='fade-up'
                             data-aos-offset='-120'
                             data-aos-duration='700'>
-                            To use: <br></br>
+                            <a 
+                            target='_blank'
+                            href="https://github.com/TechRate/Smart-Contract-Audits/blob/main/LuckyBSC%20Standart%20Smart%20Contract%20Security%20Audit.pdf">
+                                Presale contract audited</a> by Techrate 
                             <br></br>
-                            1. Click approve to allow the presale contract to transfer up to 250 BUSD <br></br>
+                            <br></br>
+                            <strong>TO USE:</strong> <br></br>
+                            <br></br>
+                            1. Connect your wallet <br></br>
+                            <br></br>
+                            2. Click approve to allow the presale contract to transfer up to 250 BUSD <br></br>
                             <br></br>
                             2. Click deposit to transfer your BUSD to the contract.
                         </p>
-                        {BUSDAllowance < 250 * 10**18 ? 
-                            <button onClick={() => approveBUSD()} className='value button-click'>Approve BUSD</button>
+                        {BUSDAllowance == 0 ? 
+                            <button onClick={() => approve()} className='value button-click'>Approve BUSD</button>
                             : 
                             <button onClick={() => depositBUSD()} className='value button-click'>Deposit BUSD</button>
                         }
                     </div>
+                    
                     <img
                         src={Graphics}
                         alt=''

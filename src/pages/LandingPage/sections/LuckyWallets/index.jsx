@@ -66,7 +66,7 @@ const Wallets = () => {
                     data-aos-duration='1100'
                 />
                 <div
-                    className='card width_100 balance_card'
+                    className='card width_100 balance_card card_bradius'
                     data-aos='fade-up'
                     data-aos-offset='0'
                     data-aos-duration='700'>

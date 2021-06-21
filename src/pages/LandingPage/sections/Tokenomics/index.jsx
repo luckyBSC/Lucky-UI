@@ -69,7 +69,7 @@ const Tokenomics = () => {
                         <img src={Token1} alt='token logo' />
                         <div className='title'>30% BURNED</div>
                         <p>
-                            Burning part of the supply makes the token deflation as yield goes to the burn address.
+                            Burning part of the supply makes the token deflationary as yield goes to the burn address.
                         </p>
                     </div>
                     <div

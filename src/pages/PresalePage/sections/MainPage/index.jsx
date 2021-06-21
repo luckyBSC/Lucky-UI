@@ -120,7 +120,7 @@ const MainPage = () => {
                     />
 
                     <div
-                        className='total_distributed card'
+                        className='total_distributed card card_bradius'
                         data-aos='fade-up'
                         data-aos-offset='-120'
                         data-aos-duration='900'>

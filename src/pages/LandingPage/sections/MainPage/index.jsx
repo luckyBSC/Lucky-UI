@@ -85,7 +85,7 @@ const MainPage = () => {
                 <div className='split_box_wrap'>
                     <Dots className='dots' />
                     <div
-                        className='split_box card'
+                        className='split_box card card_bradius'
                         data-aos='fade-up'
                         data-aos-offset='0'
                         data-aos-duration='800'>
@@ -94,7 +94,7 @@ const MainPage = () => {
                         <div className='value'>{luckyDrawAmount} / 888 BUSD</div>
                     </div>
                     <div
-                        className='split_box card'
+                        className='split_box card card_bradius'
                         data-aos='fade-up'
                         data-aos-offset='0'
                         data-aos-duration='1000'>
@@ -120,7 +120,7 @@ const MainPage = () => {
                     />
 
                     <div
-                        className='total_distributed card'
+                        className='total_distributed_main card card_bradius'
                         data-aos='fade-up'
                         data-aos-offset='0'
                         data-aos-duration='900'>

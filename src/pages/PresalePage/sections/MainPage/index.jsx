@@ -33,13 +33,14 @@ const MainPage = () => {
           });
     }
 
-    
+
     useEffect(() => {
         
         async function load() {
             setBUSDAllowance(await getBUSDApprovalBalance());
             setWalletWhitelisted(await isWhitelisted());
             await checkAllowance();
+            console.log(1);
         }
         load()
     }, []);

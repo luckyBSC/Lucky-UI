@@ -11,13 +11,8 @@ header {
     transition: background 0.5s, padding 0.6s;
 
     .invisible {
-<<<<<<< HEAD
-        visibility: hidden;
-      }
-=======
       visibility: hidden;
     }
->>>>>>> 7915396085ea1e5a46ca0b8e3d0f6a4917d80434
 
     &.sticked {
         background-color: #fff;

@@ -33,6 +33,7 @@ const MainPage = () => {
           });
     }
 
+    
     useEffect(() => {
         
         async function load() {

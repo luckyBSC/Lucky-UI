@@ -150,8 +150,10 @@ async function depositBUSD() {
         let balance = await contract.methods.addPresaleBUSD().send({
             from: userAddress[0]
         });
+        console.log(balance);
         return;
     }
+
 }
 
 export {

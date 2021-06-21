@@ -8,8 +8,28 @@ import Coins from './../../../../assets/images/svg/Coins.svg';
 const faqData = [
     {
         question: 'How does the presale work?',
-        answer: 'More info will be updated here soon.',
-    }
+        answer: 'Presale is $250 BUSD for 711,111,111,111 tokens or 0.08% of supply. Contibute 250 BUSD on this page and you will receive tokens shortly after launc. Tokens have a vesting schedule.',
+    },
+    {
+        question: 'What is vesting?',
+        answer: 'Vesting is 10% unlocked at launch, 5% unlocked per day thereafter. The 5% per day is linear. We will have a means for you to check how many tokens are still locked for selling.',
+    },
+    {
+        question: 'What is initial marketcap?',
+        answer: 'Initial marketcap is ~204k. Fully diluted the marketcap is ~291k. The difference reflects that 30% of supply will be burned.',
+    },
+    {
+        question: 'What is presale price?',
+        answer: '$0.000000000351563',
+    },
+    {
+        question: 'What is listing price?',
+        answer: '$0.000000000328125',
+    },
+    {
+        question: 'What is initial liquidity?',
+        answer: '87,500 BUSD will be paired vs 30% of LUCKY supply',
+    },
 ];
 
 const FAQ = () => {

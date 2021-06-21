@@ -15,7 +15,7 @@ import { connectToWeb3 } from './web3/web3.js';
 
 
 function App() {
-    let page;
+    let page = window.location.href.split('/')[3];
     useEffect(() => {
         AOS.init({
             duration: 2000,
@@ -23,9 +23,6 @@ function App() {
 
         const loadWeb3 = async () => {
             await connectToWeb3();
-            console.log(window.location.href.split('/'));
-            page = window.location.href.split('/')[3];
-            console.log(page);
         }
 
         loadWeb3()
@@ -34,7 +31,7 @@ function App() {
     return (
         <>
             <Header page={page}/>
-            {page == 'presale' ?
+            {page === 'presale' ?
                 <PresalePage />
                 :
                 <LandingPage />

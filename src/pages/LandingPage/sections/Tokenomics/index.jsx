@@ -62,7 +62,7 @@ const Tokenomics = () => {
                 </h1>
                 <div className='flex_wrap width_100 space_between main_cards'>
                     <div
-                        className='card'
+                        className='card card_bradius'
                         data-aos='fade-up'
                         data-aos-offset='0'
                         data-aos-duration='600'>
@@ -73,7 +73,7 @@ const Tokenomics = () => {
                         </p>
                     </div>
                     <div
-                        className='card'
+                        className='card card_bradius'
                         data-aos='fade-up'
                         data-aos-offset='0'
                         data-aos-duration='700'>
@@ -86,7 +86,7 @@ const Tokenomics = () => {
                         </p>
                     </div>
                     <div
-                        className='card'
+                        className='card card_bradius'
                         data-aos='fade-up'
                         data-aos-offset='0'
                         data-aos-duration='800'>

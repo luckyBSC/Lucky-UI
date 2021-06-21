@@ -159,7 +159,11 @@ const Header = (props = {}) => {
                             href='#tokenomics'
                             onClick={anchorLinkClickHandler}
                             className={
+<<<<<<< HEAD
+                                `${page === 'presale' ? 'invisible ' : ''}` +
+=======
                               `${page === 'presale' ? 'invisible ' : ''}` +
+>>>>>>> 7915396085ea1e5a46ca0b8e3d0f6a4917d80434
                                 'link' +
                                 (clickedTopic === 'tokenomics' ? ' active' : '')
                             }>
@@ -169,7 +173,11 @@ const Header = (props = {}) => {
                             href='#FAQ'
                             onClick={anchorLinkClickHandler}
                             className={
+<<<<<<< HEAD
+                                `${page === 'presale' ? 'invisible ' : ''}` +
+=======
                               `${page === 'presale' ? 'invisible ' : ''}` +
+>>>>>>> 7915396085ea1e5a46ca0b8e3d0f6a4917d80434
                                 'link' +
                                 (clickedTopic === 'FAQ' ? ' active' : '')
                             }>

@@ -120,7 +120,7 @@ const MainPage = () => {
                     />
 
                     <div
-                        className='total_distributed card'
+                        className='total_distributed card card_bradius'
                         data-aos='fade-up'
                         data-aos-offset='-120'
                         data-aos-duration='900'>
@@ -128,7 +128,7 @@ const MainPage = () => {
                         <p
                             className="presale-text"
                             data-aos='fade-up'
-                            data-aos-offset='0'
+                            data-aos-offset='-120'
                             data-aos-duration='700'>
                             To use: <br></br>
                             <br></br>

@@ -21,7 +21,7 @@ const LandingPage = () => {
                 alt='gradeint'
                 className='second_gradient'
             />
-            <img src={Gradient2} alt='gradeint' className='gradient2' />
+            {/*<img src={Gradient2} alt='gradeint' className='gradient2' />*/}
             {/* <Cookie /> */}
             <MainPage />
             <FAQ />

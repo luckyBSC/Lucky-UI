@@ -40,7 +40,7 @@ const MainPage = () => {
             setBUSDAllowance(await getBUSDApprovalBalance());
             setWalletWhitelisted(await isWhitelisted());
             await checkAllowance();
-            console.log(1);
+            
         }
         load()
     }, []);

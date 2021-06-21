@@ -72,8 +72,7 @@ async function connectWallet() {
     const web3 = new Web3(provider);
 
     myWeb3 = web3;
-    console.log(myWeb3);
-    console.log(await myWeb3.eth.getAccounts());
+
     return await myWeb3.eth.getAccounts();
 }
 
@@ -115,13 +114,11 @@ async function getMoveablePresaleAmount() {
 const BUSD = '0xe9e7cea3dedca5984780bafc599bd69add087d56';
 const presaleContract = '0x5346F36C8802A241f3a31FD6c24c6Fb934dD5F27';
 async function getBUSDApprovalBalance() {
-    console.log(myWeb3);
+    
     if (myWeb3) {
         let userAddress = await myWeb3.eth.getAccounts();
-        console.log(userAddress);
         let contract = new myWeb3.eth.Contract(Lucky.abi, BUSD);
         let balance = await contract.methods.allowance(userAddress[0], presaleContract).call();
-        console.log(balance);
         return balance;
     }
 }

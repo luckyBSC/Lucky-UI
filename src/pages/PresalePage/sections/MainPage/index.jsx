@@ -141,29 +141,55 @@ const MainPage = () => {
                                 <div>Not Whitelisted</div>
                             }
                         </div>
-                        <p
-                            className="presale-text"
-                            data-aos='fade-up'
-                            data-aos-offset='-120'
-                            data-aos-duration='700'>
-                            <a 
-                            target='_blank'
-                            href="https://github.com/TechRate/Smart-Contract-Audits/blob/main/LuckyBSC%20Standart%20Smart%20Contract%20Security%20Audit.pdf">
-                                Presale contract audited</a> by Techrate 
-                            <br></br>
-                            <br></br>
-                            <strong>TO USE:</strong> <br></br>
-                            <br></br>
-                            1. Connect your wallet <br></br>
-                            <br></br>
-                            2. Click approve to allow the presale contract to transfer up to 250 BUSD <br></br>
-                            <br></br>
-                            2. Click deposit to transfer your BUSD to the contract.
-                        </p>
-                        {BUSDAllowance == 0 ? 
-                            <button onClick={() => approve()} className='value button-click'>Approve BUSD</button>
-                            : 
-                            <button onClick={() => depositBUSD()} className='value button-click'>Deposit BUSD</button>
+                        {walletWhitelisted ?
+                            <p
+                                className="presale-text"
+                                data-aos='fade-up'
+                                data-aos-offset='-120'
+                                data-aos-duration='700'>
+                                <a 
+                                target='_blank'
+                                href="https://github.com/TechRate/Smart-Contract-Audits/blob/main/LuckyBSC%20Standart%20Smart%20Contract%20Security%20Audit.pdf">
+                                    Presale contract audited</a> by Techrate 
+                                <br></br>
+                                <br></br>
+                                <strong>TO USE:</strong> <br></br>
+                                <br></br>
+                                1. Connect your wallet <br></br>
+                                <br></br>
+                                2. Click approve to allow the presale contract to transfer up to 250 BUSD <br></br>
+                                <br></br>
+                                2. Click deposit to transfer your BUSD to the contract.
+                            </p>
+                            :
+                            <p
+                                className="presale-text"
+                                data-aos='fade-up'
+                                data-aos-offset='-120'
+                                data-aos-duration='700'>
+                                <a 
+                                target='_blank'
+                                href="https://github.com/TechRate/Smart-Contract-Audits/blob/main/LuckyBSC%20Standart%20Smart%20Contract%20Security%20Audit.pdf">
+                                    Presale contract audited</a> by Techrate 
+                                <br></br>
+                                <br></br>
+                                <strong>TO USE:</strong>
+                                <br></br>
+                                1. Go get whitelisted! <br></br>
+                                <br></br>
+                                
+                            </p>
+                        }
+                        {walletWhitelisted ?
+                            <div>
+                                {BUSDAllowance == 0 ? 
+                                    <button onClick={() => approve()} className='value button-click'>Approve BUSD</button>
+                                    : 
+                                    <button onClick={() => depositBUSD()} className='value button-click'>Deposit BUSD</button>
+                                }
+                            </div>
+                            :
+                            null
                         }
                     </div>
                     

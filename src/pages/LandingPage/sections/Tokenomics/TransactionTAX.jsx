@@ -42,7 +42,7 @@ const TransactionTAX = () => {
             </div>
             <div className='boxes_wrap'>
                 <div
-                    className='card no_layer second_box'
+                    className='card no_layer second_box card_bradius'
                     data-aos='fade-up'
                     data-aos-offset='0'
                     data-aos-duration='600'>
@@ -51,7 +51,7 @@ const TransactionTAX = () => {
                     <p>Reflection yield to existing holders</p>
                 </div>
                 <div
-                    className='card no_layer second_box'
+                    className='card no_layer second_box card_bradius'
                     data-aos='fade-up'
                     data-aos-offset='0'
                     data-aos-duration='700'>
@@ -61,7 +61,7 @@ const TransactionTAX = () => {
                     <StraightLine />
                 </div>
                 <div
-                    className='card no_layer second_box'
+                    className='card no_layer second_box card_bradius'
                     data-aos='fade-up'
                     data-aos-offset='0'
                     data-aos-duration='800'>

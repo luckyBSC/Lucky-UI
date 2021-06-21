@@ -8,11 +8,15 @@ import Coins from './../../../../assets/images/svg/Coins.svg';
 const faqData = [
     {
         question: 'How does the presale work?',
-        answer: 'Presale is $250 BUSD for 711,111,111,111 tokens or 0.08% of supply. Contibute 250 BUSD on this page and you will receive tokens shortly after launc. Tokens have a vesting schedule.',
+        answer: 'Presale is $250 BUSD for 711,111,111,111 tokens or 0.08% of supply. Contibute 250 BUSD on this page and you will receive tokens shortly after launch. Tokens have a vesting schedule.',
+    },
+    {
+        question: 'When is launch?',
+        answer: 'Wednesday at a time TBD. Please be sure to keep an eye on the telegram channel https://t.me/luckytokenbsc for announcements.',
     },
     {
         question: 'What is vesting?',
-        answer: 'Vesting is 10% unlocked at launch, 5% unlocked per day thereafter. The 5% per day is linear. We will have a means for you to check how many tokens are still locked for selling.',
+        answer: 'Vesting is 15% unlocked at launch, then after 24 hours 5% unlocked per day thereafter. The 5% per day is linear. We will have a means for you to check how many you can sell.',
     },
     {
         question: 'What is initial marketcap?',

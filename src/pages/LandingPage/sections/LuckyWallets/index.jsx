@@ -86,7 +86,7 @@ const Wallets = () => {
                 <div className='flex_wrap width_100'>
                     <img src={Oval} alt='' className='oval' />
                     <div
-                        className='listings_wrap card width_100 no_layer'
+                        className='listings_wrap card width_100 no_layer card_bradius'
                         data-aos='fade-up'
                         data-aos-offset='0'
                         data-aos-duration='800'>

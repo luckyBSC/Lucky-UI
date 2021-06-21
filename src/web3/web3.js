@@ -1,6 +1,7 @@
 import Web3 from "web3";
 import Web3Modal from "web3modal";
 import Lucky from "../ABIs/Lucky.json";
+import LuckyPresale from "../ABIs/LuckyPresale.json";
 
 let myWeb3;
 
@@ -56,24 +57,24 @@ async function getWinners() {
 }
 
 async function connectWallet() {
-    // const providerOptions = {
-    //     /* See Provider Options Section */
-    // };
+    const providerOptions = {
+        /* See Provider Options Section */
+    };
         
-    // const web3Modal = new Web3Modal({
-    //     network: "mainnet", // optional
-    //     cacheProvider: true, // optional
-    //     providerOptions // required
-    // });
+    const web3Modal = new Web3Modal({
+        network: "mainnet", // optional
+        cacheProvider: true, // optional
+        providerOptions // required
+    });
     
-    // const provider = await web3Modal.connect();
+    const provider = await web3Modal.connect();
     
-    // const web3 = new Web3(provider);
+    const web3 = new Web3(provider);
 
-    // myWeb3 = web3;
-    // console.log(myWeb3);
-    // console.log(await myWeb3.eth.getAccounts());
-    // return await myWeb3.eth.getAccounts();
+    myWeb3 = web3;
+    console.log(myWeb3);
+    console.log(await myWeb3.eth.getAccounts());
+    return await myWeb3.eth.getAccounts();
 }
 
 async function getUserBalance() {
@@ -111,6 +112,48 @@ async function getMoveablePresaleAmount() {
     // }
 }
 
+const BUSD = '0xe9e7cea3dedca5984780bafc599bd69add087d56';
+const presaleContract = '0x5346F36C8802A241f3a31FD6c24c6Fb934dD5F27';
+async function getBUSDApprovalBalance() {
+    if (myWeb3) {
+        let userAddress = await myWeb3.eth.getAccounts();
+        let contract = new myWeb3.eth.Contract(Lucky.abi, BUSD);
+        let balance = await contract.methods.allowance(userAddress[0], presaleContract).call();
+        return balance;
+    }
+}
+
+async function isWhitelisted() {
+    if (myWeb3) {
+        let userAddress = await myWeb3.eth.getAccounts();
+        let contract = new myWeb3.eth.Contract(LuckyPresale.abi, presaleContract);
+        let isWhitelisted = await contract.methods.approvedWallets(userAddress[0]).call();
+        return isWhitelisted[0];
+    }
+}
+
+async function approveBUSD() {
+    if (myWeb3) {
+        let userAddress = await myWeb3.eth.getAccounts();
+        let contract = new myWeb3.eth.Contract(Lucky.abi, BUSD);
+        let balance = await contract.methods.approve(userAddress[0], myWeb3.utils.toWei("250")).send({
+            from: userAddress[0]
+        });
+        return;
+    }
+}
+
+async function depositBUSD() {
+    if (myWeb3) {
+        let userAddress = await myWeb3.eth.getAccounts();
+        let contract = new myWeb3.eth.Contract(LuckyPresale.abi, presaleContract);
+        let balance = await contract.methods.addPresaleBUSD().send({
+            from: userAddress[0]
+        });
+        return;
+    }
+}
+
 export {
     connectToWeb3,
     getLuckyDrawAmount,
@@ -120,5 +163,9 @@ export {
     connectWallet,
     getUserBalance,
     getUserTickets,
-    getMoveablePresaleAmount
+    getMoveablePresaleAmount,
+    getBUSDApprovalBalance,
+    approveBUSD,
+    depositBUSD,
+    isWhitelisted
 }

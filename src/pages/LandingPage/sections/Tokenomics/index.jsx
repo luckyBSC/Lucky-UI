@@ -62,18 +62,18 @@ const Tokenomics = () => {
                 </h1>
                 <div className='flex_wrap width_100 space_between main_cards'>
                     <div
-                        className='card'
+                        className='card card_bradius'
                         data-aos='fade-up'
                         data-aos-offset='0'
                         data-aos-duration='600'>
                         <img src={Token1} alt='token logo' />
                         <div className='title'>30% BURNED</div>
                         <p>
-                            Burning part of the supply makes the token deflation as yield goes to the burn address.
+                            Burning part of the supply makes the token deflationary as yield goes to the burn address.
                         </p>
                     </div>
                     <div
-                        className='card'
+                        className='card card_bradius'
                         data-aos='fade-up'
                         data-aos-offset='0'
                         data-aos-duration='700'>
@@ -86,7 +86,7 @@ const Tokenomics = () => {
                         </p>
                     </div>
                     <div
-                        className='card'
+                        className='card card_bradius'
                         data-aos='fade-up'
                         data-aos-offset='0'
                         data-aos-duration='800'>

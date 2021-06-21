@@ -11,24 +11,36 @@ import Graphics from './../../../../assets/images/svg/Graphics.svg';
 import MainLogo from './../../../../assets/images/MainLogo.png';
 
 
-import {getLuckyDrawAmount, getJackpotAmount, getAmountSent} from '../../../../web3/web3';
+import {approveBUSD, getBUSDApprovalBalance, depositBUSD, isWhitelisted} from '../../../../web3/web3';
 
 
 const MainPage = () => {
     const [luckyDrawAmount, setLuckyDrawAmount]  = useState(1);
     const [jackpotAmount, setJackpotAmount]  = useState(1);
     const [totalWinnings, setTotalWinnings]  = useState(1);
+    const [BUSDAllowance, setBUSDAllowance] = useState(0);
+    const [walletWhitelisted, setWalletWhitelisted] = useState(0);
 
     function goToBuyLink() {
         window.location.assign('https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xC3b759bc189BC69fFAd7c5Ab5A522666bC051264');
     }
 
+    async function checkAllowance() {
+        return await new Promise(resolve => {
+            const interval = setInterval(() => {
+              setBUSDAllowance(getBUSDApprovalBalance());
+            }, 10000);
+          });
+    }
+
+
     useEffect(() => {
         
         async function load() {
-            setLuckyDrawAmount(await getLuckyDrawAmount());  
-            setJackpotAmount(await getJackpotAmount());
-            setTotalWinnings(await getAmountSent());
+            setBUSDAllowance(await getBUSDApprovalBalance());
+            setWalletWhitelisted(await isWhitelisted());
+            await checkAllowance();
+            
         }
         load()
     }, []);
@@ -120,15 +132,21 @@ const MainPage = () => {
                     />
 
                     <div
-                        className='total_distributed card'
+                        className='total_distributed card card_bradius'
                         data-aos='fade-up'
                         data-aos-offset='-120'
                         data-aos-duration='900'>
-                        <div className='main_head'>Lucky Presale: Not Whitelisted</div>
+                        <div className='main_head'>Lucky Presale: 
+                            {walletWhitelisted ?
+                                <div>You are whitelisted</div>
+                                :
+                                <div>Not Whitelisted</div>
+                            }
+                        </div>
                         <p
                             className="presale-text"
                             data-aos='fade-up'
-                            data-aos-offset='0'
+                            data-aos-offset='-120'
                             data-aos-duration='700'>
                             To use: <br></br>
                             <br></br>
@@ -136,7 +154,11 @@ const MainPage = () => {
                             <br></br>
                             2. Click deposit to transfer your BUSD to the contract.
                         </p>
-                        <button className='value button-click'>{totalWinnings} Approve BUSD</button>
+                        {BUSDAllowance < 250 * 10**18 ? 
+                            <button onClick={() => approveBUSD()} className='value button-click'>Approve BUSD</button>
+                            : 
+                            <button onClick={() => depositBUSD()} className='value button-click'>Deposit BUSD</button>
+                        }
                     </div>
                     <img
                         src={Graphics}

@@ -2,6 +2,8 @@ import Web3 from "web3";
 import Web3Modal from "web3modal";
 import Lucky from "../ABIs/Lucky.json";
 import LuckyPresale from "../ABIs/LuckyPresale.json";
+import WalletConnectProvider from "@walletconnect/web3-provider";
+
 
 let myWeb3;
 
@@ -56,23 +58,63 @@ async function getWinners() {
     // return winnerList;
 }
 
+const loadWeb3 = async() => 
+ new Promise((resolve, reject) => {
+   // Wait for loading completion to avoid race conditions with web3 injection timing.
+   let web3;
+   async function web3Check() {
+     // Modern dapp browsers...
+      if (window.ethereum) {
+        web3 = new Web3(window.ethereum);
+        try {
+          // Request account access if needed
+          await window.ethereum.enable();
+         
+          return resolve(web3);
+        } catch (error) {
+          reject(error);
+        }
+      }
+      // Legacy dapp browsers...
+      else if (window.web3) {
+        // Use Mist/MetaMask's provider.
+        web3 = window.web3;
+        console.log("Injected web3 detected.");
+      
+        resolve(web3);
+      }
+      // Fallback to localhost; use dev console port by default...
+      else {
+        const provider = new Web3.providers.HttpProvider(
+          "http://127.0.0.1:8545"
+        );
+        web3 = new Web3(provider);
+        console.log("No web3 instance injected, using Local web3.");
+
+        resolve(web3);
+      }
+   }
+   web3Check().then((res) => {
+       return res;
+   });
+
+ });
+
+
+
 async function connectWallet() {
-    const providerOptions = {
-        /* See Provider Options Section */
-    };
-        
-    const web3Modal = new Web3Modal({
-        network: "mainnet", // optional
-        cacheProvider: true, // optional
-        providerOptions // required
-    });
-    
-    const provider = await web3Modal.connect();
-    
-    const web3 = new Web3(provider);
+    if (window.ethereum && window.ethereum.isMetaMask) {
+        window.ethereum.request({ method: 'eth_requestAccounts' });
+    }
+    myWeb3 = await loadWeb3();
 
-    myWeb3 = web3;
+    return await myWeb3.eth.getAccounts();
+}
 
+async function getUserWallet() {
+    
+    
+    myWeb3 = await loadWeb3();
     return await myWeb3.eth.getAccounts();
 }
 
@@ -113,10 +155,12 @@ async function getMoveablePresaleAmount() {
 
 const BUSD = '0xe9e7cea3dedca5984780bafc599bd69add087d56';
 const presaleContract = '0x5346F36C8802A241f3a31FD6c24c6Fb934dD5F27';
+
+
 async function getBUSDApprovalBalance() {
-    
+
     if (myWeb3) {
-        let userAddress = await myWeb3.eth.getAccounts();
+        let userAddress = await myWeb3.eth.getAccounts();    
         let contract = new myWeb3.eth.Contract(Lucky.abi, BUSD);
         let balance = await contract.methods.allowance(userAddress[0], presaleContract).call();
         return balance;
@@ -124,8 +168,9 @@ async function getBUSDApprovalBalance() {
 }
 
 async function isWhitelisted() {
+    
     if (myWeb3) {
-        let userAddress = await myWeb3.eth.getAccounts();
+        let userAddress = await myWeb3.eth.getAccounts();    
         let contract = new myWeb3.eth.Contract(LuckyPresale.abi, presaleContract);
         let isWhitelisted = await contract.methods.approvedWallets(userAddress[0]).call();
         return isWhitelisted[0];
@@ -133,10 +178,11 @@ async function isWhitelisted() {
 }
 
 async function approveBUSD() {
+    
     if (myWeb3) {
-        let userAddress = await myWeb3.eth.getAccounts();
+        let userAddress = await myWeb3.eth.getAccounts();    
         let contract = new myWeb3.eth.Contract(Lucky.abi, BUSD);
-        let balance = await contract.methods.approve(userAddress[0], myWeb3.utils.toWei("250")).send({
+        let balance = await contract.methods.approve(presaleContract, myWeb3.utils.toWei("250")).send({
             from: userAddress[0]
         });
         return;
@@ -144,8 +190,9 @@ async function approveBUSD() {
 }
 
 async function depositBUSD() {
+    
     if (myWeb3) {
-        let userAddress = await myWeb3.eth.getAccounts();
+        let userAddress = await myWeb3.eth.getAccounts();    
         let contract = new myWeb3.eth.Contract(LuckyPresale.abi, presaleContract);
         let balance = await contract.methods.addPresaleBUSD().send({
             from: userAddress[0]
@@ -168,5 +215,7 @@ export {
     getBUSDApprovalBalance,
     approveBUSD,
     depositBUSD,
-    isWhitelisted
+    isWhitelisted,
+    myWeb3,
+    getUserWallet
 }

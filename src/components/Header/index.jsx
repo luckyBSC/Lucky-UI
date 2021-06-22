@@ -15,7 +15,14 @@ const Header = (props = {}) => {
     const [sticked, setSticked] = useState(false);
     const [clickedTopic, setClickedTopic] = useState('');
     const [hamburgerClicked, setHamburgerClicked] = useState(false);
-    const [userWallet, setUserWallet] = useState(null);
+    const [userWallet, setUserWallet] = useState('');
+
+    async function connectAddress() {
+        let accounts = await connectWallet();
+        console.log(accounts);
+        setUserWallet(accounts[0]);
+        window.location.reload();
+    }
 
     useEffect(() => {
         function stickHeaderHandler(e) {
@@ -177,9 +184,9 @@ const Header = (props = {}) => {
                         </a>
                     </div>
                     {userWallet && userWallet.length > 0 ?
-                        <button onClick={() => connectWallet()}>...{userWallet[0].substr(userWallet[0].length - 8)}</button>
+                        <button >...{userWallet[0].substr(userWallet[0].length - 8)}</button>
                         :
-                        <button onClick={() => connectWallet()}>Connect Wallet</button>
+                        <button onClick={() => connectAddress()}>Connect Wallet</button>
                     }
                 </div>
             </header>

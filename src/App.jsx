@@ -22,7 +22,7 @@ function App() {
         });
 
         const loadWeb3 = async () => {
-            await connectToWeb3();
+            // await connectToWeb3();
         }
 
         loadWeb3()

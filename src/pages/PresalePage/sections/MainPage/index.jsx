@@ -15,15 +15,8 @@ import {connectWallet, approveBUSD, getBUSDApprovalBalance, depositBUSD, isWhite
 
 
 const MainPage = () => {
-    const [luckyDrawAmount, setLuckyDrawAmount]  = useState(1);
-    const [jackpotAmount, setJackpotAmount]  = useState(1);
-    const [totalWinnings, setTotalWinnings]  = useState(1);
     const [BUSDAllowance, setBUSDAllowance] = useState(0);
-    const [walletWhitelisted, setWalletWhitelisted] = useState(0);
-
-    function goToBuyLink() {
-        window.location.assign('https://exchange.pancakeswap.finance/#/swap?outputCurrency=0xC3b759bc189BC69fFAd7c5Ab5A522666bC051264');
-    }
+    const [walletWhitelisted, setWalletWhitelisted] = useState(false);
 
 
     async function approve() {
@@ -31,14 +24,18 @@ const MainPage = () => {
         setBUSDAllowance(await getBUSDApprovalBalance());
     }
 
-
     useEffect(() => {
         
         async function load() {
-            await connectWallet();
-            setBUSDAllowance(await getBUSDApprovalBalance());
-            setWalletWhitelisted(await isWhitelisted());
-           
+            let accounts = await connectWallet();
+            if (accounts[0]) {
+                setWalletWhitelisted(await isWhitelisted());
+                setBUSDAllowance(await getBUSDApprovalBalance());
+            }
+
+            
+            
+            
         }
         load()
     }, []);
@@ -159,7 +156,7 @@ const MainPage = () => {
                                 <br></br>
                                 2. Click approve to allow the presale contract to transfer up to 250 BUSD <br></br>
                                 <br></br>
-                                2. Click deposit to transfer your BUSD to the contract.
+                                3. Click deposit to transfer your BUSD to the contract.
                             </p>
                             :
                             <p
@@ -173,9 +170,9 @@ const MainPage = () => {
                                     Presale contract audited</a> by Techrate 
                                 <br></br>
                                 <br></br>
-                                <strong>TO USE:</strong>
+                                <strong>TO USE ::</strong>
                                 <br></br>
-                                1. Go get whitelisted! <br></br>
+                                1. Connect wallet and be whitelisted! <br></br>
                                 <br></br>
                                 
                             </p>

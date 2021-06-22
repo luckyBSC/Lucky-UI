@@ -8,7 +8,7 @@ import Coins from './../../../../assets/images/svg/Coins.svg';
 const faqData = [
     {
         question: 'How does the presale work?',
-        answer: 'Presale is $250 BUSD for 711,111,111,111 tokens or 0.08% of supply. Contibute 250 BUSD on this page and you will receive tokens shortly after launch. Tokens have a vesting schedule.',
+        answer: 'Presale is $250 BUSD for 711,111,111,111 tokens or 0.08% of supply. Contribute 250 BUSD on this page and you will receive tokens shortly after launch. Tokens have a vesting schedule.',
     },
     {
         question: 'When is launch?',

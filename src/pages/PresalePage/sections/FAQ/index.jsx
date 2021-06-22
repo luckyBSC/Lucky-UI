@@ -16,7 +16,7 @@ const faqData = [
     },
     {
         question: 'What is vesting?',
-        answer: 'Vesting is 15% unlocked at launch, then after 24 hours 5% unlocked per day thereafter. The 5% per day is linear. We will have a means for you to check how many you can sell.',
+        answer: 'Vesting is 15% unlocked at launch, then after 24 hours 5% unlocked per day thereafter. We will have a means for you to check how many you can sell.',
     },
     {
         question: 'What is initial marketcap?',

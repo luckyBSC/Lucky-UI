@@ -32,7 +32,7 @@ const faqData = [
     },
     {
         question: 'What was the presale?',
-        answer: '500 wallets were given allocations of 711,111,111,111 tokens in exchange for 250 BUSD. This presale enabled the initial liquidity pool to be established on pancakeswap and provided funds for initial marketing. The presale was designed to minimize whales by limiting each allocation to 0.08% of supply.  Presale allocations have a vesting schedule of 10% unlocked at TGE and 5% unlocked per day thereafter.',
+        answer: '500 wallets were given allocations of 711,111,111,111 tokens in exchange for 250 BUSD. This presale enabled the initial liquidity pool to be established on pancakeswap and provided funds for initial marketing. The presale was designed to minimize whales by limiting each allocation to 0.08% of supply.  Presale allocations have a vesting schedule of 15% unlocked at TGE and 5% unlocked per day thereafter.',
     },
     {
         question: 'Why is the team anon?',
